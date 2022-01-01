@@ -24,6 +24,23 @@
         <ion-button color="success" fill="clear" size="full">Register</ion-button>
         <ion-button color="dark" fill="clear" size="full">Forgot email/password</ion-button>
 
+        <app-login-button *ngIf="(auth.isAuthenticated$ | async) === false">
+        </app-login-button>
+        
+
+
+
+        <app-logout-button *ngIf="auth.isAuthenticated$ | async">
+        </app-logout-button>
+        <app-profile></app-profile>
+        <div *ngIf="user$ | async as user" class="profile-container">
+          <ion-avatar class="avatar">
+            <img [src]="user.picture" [alt]="user.name" />
+          </ion-avatar>
+          <h2>{{ user.name }}</h2>
+          <p>{{ user.email }}</p>
+        </div>
+
       </ion-card-content>
     </ion-card>
 

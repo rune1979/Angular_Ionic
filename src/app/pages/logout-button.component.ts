@@ -4,7 +4,7 @@ import { Browser } from '@capacitor/browser';
 import { tap } from 'rxjs/operators';
 
 // Build the URL to return back to your app after logout
-const returnTo = `${config.appId}://rune1979.eu.auth0.com/capacitor/${config.appId}/callback`;
+const returnTo = `io.ionic.starter://rune1979.eu.auth0.com/capacitor/io.ionic.starter/callback`;
 
 @Component({
   selector: 'app-logout-button',

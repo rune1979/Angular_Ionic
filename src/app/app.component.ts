@@ -1,10 +1,11 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { mergeMap } from 'rxjs/operators';
 import { Browser } from '@capacitor/browser';
 import { App } from '@capacitor/app';
+import { callbackUri } from './auth.config';
 
-const callbackUri = `${config.appId}://rune1979.eu.auth0.com/capacitor/${config.appId}/callback`;
+// const callbackUri = `io.ionic.starter://rune1979.eu.auth0.com/capacitor/io.ionic.starter/callback`;
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
     App.addListener('appUrlOpen', ({ url }) => {
       // Must run inside an NgZone for Angular to pick up the changes
       // https://capacitorjs.com/docs/guides/angular
-      ngZone.run(() => {
+      this.ngZone.run(() => {
         if (url?.startsWith(callbackUri)) {
           // If the URL is an authentication callback URL..
           if (

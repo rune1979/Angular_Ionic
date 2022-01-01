@@ -6,6 +6,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 
+//
+import { LoginButtonComponent } from '../login-button.component';
+import { LogoutButtonComponent } from '../logout-button.component';
+//
+
 import { LoginPage } from './login.page';
 
 @NgModule({
@@ -15,6 +20,6 @@ import { LoginPage } from './login.page';
     IonicModule,
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage, LoginButtonComponent, LogoutButtonComponent]
 })
 export class LoginPageModule {}
