@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, switchMap } from 'rxjs/operators';
 import { Browser } from '@capacitor/browser';
 import { App } from '@capacitor/app';
 import { callbackUri } from './auth.config';
@@ -14,7 +14,10 @@ import { callbackUri } from './auth.config';
 })
 export class AppComponent implements OnInit {
   // Import the AuthService module from the Auth0 Angular SDK
+  user$ = this.auth.isAuthenticated$.pipe(switchMap(() => this.auth.user$));
   constructor(public auth: AuthService, private ngZone: NgZone) {}
+
+  
 
   ngOnInit(): void {
     // Use Capacitor's App plugin to subscribe to the `appUrlOpen` event

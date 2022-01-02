@@ -11,6 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthConfig, AuthModule } from '@auth0/auth0-angular';
 import { domain, clientId, callbackUri } from './auth.config';
 
+// Import login logout button
+import { LoginButtonComponent } from './pages/login-button.component';
+import { LogoutButtonComponent } from './pages/logout-button.component';
+//
+
 const config: AuthConfig = {
   domain,
   clientId,
@@ -23,7 +28,7 @@ const config: AuthConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginButtonComponent, LogoutButtonComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

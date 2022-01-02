@@ -2,10 +2,14 @@ ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
+.profile-login{
+    margin: 10px;
+}
+
 ion-menu.md ion-content {
   --padding-start: 8px;
   --padding-end: 8px;
-  --padding-top: 20px;
+  --padding-top: 5px;
   --padding-bottom: 20px;
 }
 
@@ -14,7 +18,7 @@ ion-menu.md ion-list {
 }
 
 ion-menu.md ion-note {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 ion-menu.md ion-list-header,

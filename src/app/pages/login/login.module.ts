@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 
-//
+// Import login logout button
 import { LoginButtonComponent } from '../login-button.component';
 import { LogoutButtonComponent } from '../logout-button.component';
 //

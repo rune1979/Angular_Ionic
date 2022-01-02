@@ -5,6 +5,20 @@
         <ion-list id="inbox-list">
           <ion-list-header>New Green</ion-list-header>
           <ion-note>The future is green</ion-note>
+          <div class="profile-login">
+          <app-login-button *ngIf="(auth.isAuthenticated$ | async) === false">
+          </app-login-button>
+          <app-logout-button *ngIf="auth.isAuthenticated$ | async">
+          </app-logout-button>
+          </div>
+
+          <div *ngIf="user$ | async as user" class="profile-container">
+            <ion-avatar class="avatar">
+              <img [src]="user.picture" [alt]="user.name" />
+            </ion-avatar>
+            <h2>{{ user.name }}</h2>
+            <p>{{ user.email }}</p>
+          </div>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
