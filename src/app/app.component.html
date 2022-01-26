@@ -16,8 +16,10 @@
             <ion-avatar class="avatar">
               <img [src]="user.picture" [alt]="user.name" />
             </ion-avatar>
-            <h2>{{ user.name }}</h2>
+            <p>{{ user.name }}</p>
             <p>{{ user.email }}</p>
+            <p>{{ user.user_id }}</p>
+
           </div>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
